@@ -8,6 +8,11 @@ const Main = () => {
   // const [pickedCards, setPickedCards] = useState([]);
   // const [currentScore, setCurrentScore] = useState(0);
   // const [highScore, setHighScore] = useState(0);
+
+  useEffect(() => {
+    const shuffledDeck = utils.shuffle(cards);
+    setCards(shuffledDeck);
+  }, []);
   return (
     <main className="game">
       <div id="instructions">game instructions</div>

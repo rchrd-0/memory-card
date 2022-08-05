@@ -48,6 +48,7 @@
           "allowForLoopAfterthoughts": true
         }
       ],
+      "no-param-reassign": "off",
       "react/function-component-definition": 0,
       "react/react-in-jsx-scope": "off",
       "react/prop-types": 0,
