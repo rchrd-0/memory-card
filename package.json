@@ -37,6 +37,15 @@
           "commentPattern": "^No\\sdefault"
         }
       ],
+      "arrow-body-style": "off",
+      "no-console": "off",
+      "no-plusplus": [
+        "error",
+        {
+          "allowForLoopAfterthoughts": true
+        }
+      ],
+      "react/function-component-definition": 0,
       "react/react-in-jsx-scope": "off",
       "react/prop-types": 0,
       "react/jsx-filename-extension": [

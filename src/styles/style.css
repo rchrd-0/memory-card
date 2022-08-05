@@ -1,0 +1,55 @@
+:root {
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+p,
+header,
+main,
+section,
+a,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+#page-header {
+  height: 50px;
+  background-color: paleturquoise;
+}
+
+#page-footer {
+  height: 40px;
+  background-color: pink;
+}
+
+.game {
+  flex: 1;
+  background-color: navajowhite;
+}
