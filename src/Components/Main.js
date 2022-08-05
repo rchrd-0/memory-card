@@ -5,19 +5,26 @@ import * as utils from './utils';
 
 const Main = () => {
   const [cards, setCards] = useState(utils.cardData);
-  // const [pickedCards, setPickedCards] = useState([]);
-  // const [currentScore, setCurrentScore] = useState(0);
+  const [pickedCards, setPickedCards] = useState([]);
+  const [currentScore, setCurrentScore] = useState(0);
   // const [highScore, setHighScore] = useState(0);
 
+  // Render deck in random order on mount
   useEffect(() => {
     const shuffledDeck = utils.shuffle(cards);
     setCards(shuffledDeck);
-  }, []);
+  }, [currentScore]);
+
+  const handleCardClick = (id) => {
+    setPickedCards((prevState) => [...prevState, id]);
+    setCurrentScore((prevState) => prevState + 1);
+  };
+
   return (
     <main className="game">
       <div id="instructions">game instructions</div>
-      <Scoreboard />
-      <Gameboard cardData={cards} />
+      <Scoreboard currentScore={currentScore} />
+      <Gameboard cardData={cards} handleClick={handleCardClick} />
     </main>
   );
 };

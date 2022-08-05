@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Cards = (props) => {
-  const { name, img } = props;
+  const { id, name, img, handleClick } = props;
   return (
-    <div className="card" data-img={img}>
+    <div className="card" data-img={img} onClick={() => handleClick(id)}>
       <img alt="" />
       {name}
     </div>
