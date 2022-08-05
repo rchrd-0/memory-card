@@ -29,7 +29,10 @@
     "rules": {
       "quotes": [
         "error",
-        "single"
+        "single",
+        {
+          "avoidEscape": true
+        }
       ],
       "default-case": [
         "error",
