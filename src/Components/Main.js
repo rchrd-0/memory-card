@@ -5,15 +5,14 @@ import * as utils from './utils';
 
 const Main = () => {
   const [cards, setCards] = useState(utils.cardData);
-  const [pickedCards, setPickedCards] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
-
+  // const [pickedCards, setPickedCards] = useState([]);
+  // const [currentScore, setCurrentScore] = useState(0);
+  // const [highScore, setHighScore] = useState(0);
   return (
     <main className="game">
       <div id="instructions">game instructions</div>
       <Scoreboard />
-      <Gameboard />
+      <Gameboard cardData={cards} />
     </main>
   );
 };
