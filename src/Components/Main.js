@@ -16,8 +16,14 @@ const Main = () => {
   }, [currentScore]);
 
   const handleCardClick = (id) => {
-    setPickedCards((prevState) => [...prevState, id]);
-    setCurrentScore((prevState) => prevState + 1);
+    const pickedBefore = pickedCards.some((card) => card === id);
+    if (!pickedBefore) {
+      setPickedCards((prevState) => [...prevState, id]);
+      setCurrentScore((prevState) => prevState + 1);
+    } else {
+      setPickedCards([]);
+      setCurrentScore(0);
+    }
   };
 
   return (
