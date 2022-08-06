@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Scoreboard from './Scoreboard/Scoreboard';
 import Gameboard from './Gameboard/Gameboard';
-import * as utils from './utils';
+import Cards from './Cards/Cards';
+import getCardData from './helpers/cardData';
+import shuffle from './helpers/shuffle';
 
 const Main = () => {
-  const [cards, setCards] = useState(utils.cardData);
+  const [cards, setCards] = useState(getCardData());
   const [pickedCards, setPickedCards] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [deckNum, setDeckNum] = useState(0);
+  const [gameState, setGameState] = useState(0);
 
   // Render deck in random order on mount && score change
   useEffect(() => {
-    const shuffledDeck = utils.shuffle(cards);
+    const shuffledDeck = shuffle(cards);
     setCards(shuffledDeck);
   }, [currentScore]);
 
@@ -46,9 +49,19 @@ const Main = () => {
   return (
     <main className="game">
       <div id="instructions">game instructions</div>
-      {/* <div id="deck-level"></div> */}
+      <div id="deck-level">Deck #{deckNum + 1}</div>
       <Scoreboard currentScore={currentScore} highScore={highScore} />
-      <Gameboard cardData={cards} handleClick={handleCardClick} />
+      <Gameboard>
+        {cards.map((card) => (
+          <Cards
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            img={card.img}
+            handleClick={handleCardClick}
+          />
+        ))}
+      </Gameboard>
     </main>
   );
 };
