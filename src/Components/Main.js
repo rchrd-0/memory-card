@@ -8,6 +8,7 @@ const Main = () => {
   const [pickedCards, setPickedCards] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [deckNum, setDeckNum] = useState(0);
 
   // Render deck in random order on mount && score change
   useEffect(() => {
@@ -22,14 +23,23 @@ const Main = () => {
     }
   }, [currentScore, highScore]);
 
-  const handleCardClick = (id) => {
-    const pickedBefore = pickedCards.some((card) => card === id);
+  // Increments deckNum on completing a full deck (12 cards)
+  useEffect(() => {
+    if (currentScore % 12 === 0) {
+      setDeckNum((prevState) => prevState + 1);
+    }
+  }, [currentScore]);
+
+  const handleCardClick = (cardId) => {
+    const fullId = cardId + deckNum;
+    const pickedBefore = pickedCards.some((card) => card === fullId);
     if (!pickedBefore) {
-      setPickedCards((prevState) => [...prevState, id]);
+      setPickedCards((prevState) => [...prevState, fullId]);
       setCurrentScore((prevState) => prevState + 1);
     } else {
       setPickedCards([]);
       setCurrentScore(0);
+      setDeckNum(0);
     }
   };
 

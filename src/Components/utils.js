@@ -1,61 +1,61 @@
 const cardData = [
   {
-    id: 'nauvw0',
+    id: 'nauvw',
     img: 'nausicaa',
     name: 'Nausicaä of the Valley of the Wind',
   },
   {
-    id: 'lcits0',
+    id: 'lcits',
     img: 'laputa',
     name: 'Laputa: Castle in the Sky',
   },
   {
-    id: 'mnttr0',
+    id: 'mnttr',
     img: 'totoro',
     name: 'My Neighbor Totoro',
   },
   {
-    id: 'kkids0',
+    id: 'kkids',
     img: 'kiki',
     name: "Kiki's Delivery Service",
   },
   {
-    id: 'pcoro0',
+    id: 'pcoro',
     img: 'porco',
     name: 'Porco Rosso',
   },
   {
-    id: 'whoth0',
+    id: 'whoth',
     img: 'whisper',
     name: 'Whisper of the Heart',
   },
   {
-    id: 'pmnok0',
+    id: 'pmnok',
     img: 'mononoke',
     name: 'Princess Mononoke',
   },
   {
-    id: 'stcnk0',
+    id: 'stcnk',
     img: 'noface',
     name: 'Spirited Away',
   },
   {
-    id: 'hmctl0',
+    id: 'hmctl',
     img: 'howls',
     name: "Howl's Moving Castle",
   },
   {
-    id: 'potbs0',
+    id: 'potbs',
     img: 'ponyo',
     name: 'Ponyo',
   },
   {
-    id: 'twdrs0',
+    id: 'twdrs',
     img: 'twr',
     name: 'The Wind Rises',
   },
   {
-    id: 'kghnm0',
+    id: 'kghnm',
     img: 'kaguya',
     name: 'The Tale of Princess Kaguya',
   },
