@@ -81,8 +81,8 @@ const Main = () => {
   return (
     <main className="game">
       <div id="instructions">
-        Score points by clicking the cards you haven't already clicked
-        previously. 12 cards total.
+        Score points by clicking a card you haven&apos;t already chosen. 12
+        cards per deck.
       </div>
       <div id="deck-level">Deck #{deckNum + 1}</div>
       <Scoreboard currentScore={currentScore} highScore={highScore} />
