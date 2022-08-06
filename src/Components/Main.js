@@ -7,13 +7,20 @@ const Main = () => {
   const [cards, setCards] = useState(utils.cardData);
   const [pickedCards, setPickedCards] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
-  // const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
-  // Render deck in random order on mount
+  // Render deck in random order on mount && score change
   useEffect(() => {
     const shuffledDeck = utils.shuffle(cards);
     setCards(shuffledDeck);
   }, [currentScore]);
+
+  // useEffect to update highScore vs. currentScore
+  useEffect(() => {
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+    }
+  }, [currentScore, highScore]);
 
   const handleCardClick = (id) => {
     const pickedBefore = pickedCards.some((card) => card === id);
@@ -29,7 +36,7 @@ const Main = () => {
   return (
     <main className="game">
       <div id="instructions">game instructions</div>
-      <Scoreboard currentScore={currentScore} />
+      <Scoreboard currentScore={currentScore} highScore={highScore} />
       <Gameboard cardData={cards} handleClick={handleCardClick} />
     </main>
   );
