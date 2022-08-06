@@ -25,7 +25,7 @@ const Main = () => {
 
   // Increments deckNum on completing a full deck (12 cards)
   useEffect(() => {
-    if (currentScore % 12 === 0) {
+    if (currentScore > 0 && currentScore % 12 === 0) {
       setDeckNum((prevState) => prevState + 1);
     }
   }, [currentScore]);
@@ -46,6 +46,7 @@ const Main = () => {
   return (
     <main className="game">
       <div id="instructions">game instructions</div>
+      {/* <div id="deck-level"></div> */}
       <Scoreboard currentScore={currentScore} highScore={highScore} />
       <Gameboard cardData={cards} handleClick={handleCardClick} />
     </main>
