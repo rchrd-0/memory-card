@@ -33,14 +33,14 @@ const Main = () => {
   useEffect(() => {
     if (currentScore > 0 && currentScore % 12 === 0) {
       setDeckNum((prevState) => prevState + 1);
+      setGameState(2);
     }
   }, [currentScore]);
 
   // Captures most recent score
   useEffect(() => {
-    if (currentScore > 0) {
-      setLastScore(currentScore);
-    }
+    const score = currentScore > 0 ? currentScore : lastScore;
+    setLastScore(score);
   }, [currentScore, lastScore]);
 
   const handleCardClick = (cardId) => {
@@ -60,9 +60,9 @@ const Main = () => {
   const playGame = () => setGameState(0);
 
   let gameComponent;
-  if (gameState === 1) {
+  if (gameState > 0) {
     gameComponent = (
-      <GamePrompt endScore={lastScore}>
+      <GamePrompt endScore={lastScore} gameState={gameState} deckNum={deckNum}>
         <Play continueGame={playGame} />
       </GamePrompt>
     );
