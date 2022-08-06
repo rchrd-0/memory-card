@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from './Header';
 import Scoreboard from './Scoreboard/Scoreboard';
 import Gameboard from './Gameboard/Gameboard';
 import Cards from './Cards/Cards';
@@ -79,15 +80,18 @@ const Main = () => {
   }
 
   return (
-    <main className="game">
-      <div id="instructions">
-        Score points by clicking a card you haven&apos;t already chosen. 12
-        cards per deck.
-      </div>
-      <div id="deck-level">Deck #{deckNum + 1}</div>
-      <Scoreboard currentScore={currentScore} highScore={highScore} />
-      <Gameboard>{gameComponent}</Gameboard>
-    </main>
+    <>
+      <Header>
+        <Scoreboard
+          currentScore={currentScore}
+          highScore={highScore}
+          deckNum={deckNum}
+        />
+      </Header>
+      <main className="game">
+        <Gameboard>{gameComponent}</Gameboard>
+      </main>
+    </>
   );
 };
 

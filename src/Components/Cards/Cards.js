@@ -5,7 +5,7 @@ const Cards = (props) => {
   return (
     <div className="card" data-img={img} onClick={() => handleClick(id)}>
       <img alt="" />
-      {name}
+      <h3 className="film-name">{name}</h3>
     </div>
   );
 };

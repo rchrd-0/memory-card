@@ -1,4 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap");
+
 :root {
+  --background: #e4f2ff;
+  --primary-dark: #001f36;
+  --primary-light: #c6e6ff;
+  --card: #d1e5f8;
+  --complementary: #ffdba6;
 }
 
 html,
@@ -11,7 +18,6 @@ h3,
 p,
 header,
 main,
-section,
 a,
 button {
   margin: 0;
@@ -33,20 +39,63 @@ html {
 }
 
 .app {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  padding: 20px;
+  gap: 20px;
+  font-family: "Jost", Arial, Helvetica, sans-serif;
+  background-color: var(--background);
 }
 
 #page-header {
-  height: 50px;
-  background-color: paleturquoise;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background: var(--primary-dark);
+  color: var(--primary-light);
+  border-radius: 8px;
+  gap: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#page-header h1 {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 #page-footer {
-  height: 40px;
-  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#made-by {
+  display: flex;
+  background: var(--primary-dark);
+  color: var(--primary-light);
+  gap: 0.5ch;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+#made-by a {
+  color: var(--complementary);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  gap: 0.5ch;
+}
+
+img.github {
+  width: 22px;
+  content: url("../Assets/github.svg");
 }
 
 .game {
@@ -54,28 +103,65 @@ html {
   flex-direction: column;
   align-items: center;
   flex: 1;
-  background-color: navajowhite;
+  background-color: var(--background);
+  user-select: none;
 }
 
 #gameboard {
   display: grid;
-  grid-template-rows: repeat(3, 200px);
-  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(3, 220px);
+  grid-template-columns: repeat(4, 320px);
   grid-gap: 20px;
+}
+
+#scoreboard {
+  display: flex;
+  gap: 2ch;
+  font-weight: 500;
+}
+
+#curr-score {
+  color: var(--complementary);
+}
+
+#high-score {
+  color: #66bcc5;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  background-color: var(--card);
+  border: 1px solid var(--primary-dark);
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  filter: brightness(0.95);
+  transition: filter 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.film-name {
+  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  /* height: 200px;
-  width: 300px; */
-  border: 2px solid black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  filter: brightness(1);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: filter 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
 .card > img {
   width: 100%;
   object-fit: contain;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .card[data-img="howls"] > img {
@@ -130,6 +216,42 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  gap: 10px;
   grid-area: 1 / 2 / span 1 / 4;
+}
+
+.prompt-content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+  color: var(--primary-light);
+  background-color: var(--primary-dark);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.prompt-score {
+  font-weight: 500;
+  color: var(--complementary);
+}
+
+.prompt-content button {
+  margin-top: 10px;
+  align-self: center;
+  padding: 4px 12px;
+  background-color: var(--card);
+  color: var(--primary-dark);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+}
+
+.prompt-content button:active {
+  filter: brightness(0.7);
+  transition: all 0.1s ease-in-out;
 }
