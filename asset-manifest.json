@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.814710ec.css",
+    "main.js": "/memory-card/static/js/main.28695534.js",
+    "static/media/laputa.jpg": "/memory-card/static/media/laputa.427bc68da5cf934fdb54.jpg",
+    "static/media/whisper.jpg": "/memory-card/static/media/whisper.e93fdf351d2c1534dd13.jpg",
+    "static/media/mononoke.jpg": "/memory-card/static/media/mononoke.ba234ecd307111457d85.jpg",
+    "static/media/nausicaa.jpg": "/memory-card/static/media/nausicaa.49e546e777750516ca58.jpg",
+    "static/media/totoro.jpg": "/memory-card/static/media/totoro.d323efc5fc79a6b97aac.jpg",
+    "static/media/howls.jpg": "/memory-card/static/media/howls.6a5c05c6b70e6c6ca1ae.jpg",
+    "static/media/twr.jpg": "/memory-card/static/media/twr.16a619089c487f414b2f.jpg",
+    "static/media/porco.jpg": "/memory-card/static/media/porco.315317f27134479b6772.jpg",
+    "static/media/noface.jpg": "/memory-card/static/media/noface.e112431bd6d845fd69c4.jpg",
+    "static/media/kiki.jpg": "/memory-card/static/media/kiki.0e96e81766278fabb9c5.jpg",
+    "static/media/ponyo.jpg": "/memory-card/static/media/ponyo.b5bc1888ee238509e690.jpg",
+    "static/media/kaguya.jpg": "/memory-card/static/media/kaguya.bd986858be016994c585.jpg",
+    "index.html": "/memory-card/index.html",
+    "static/media/github.svg": "/memory-card/static/media/github.c529138f2e7b41f18f28.svg",
+    "main.814710ec.css.map": "/memory-card/static/css/main.814710ec.css.map",
+    "main.28695534.js.map": "/memory-card/static/js/main.28695534.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.814710ec.css",
+    "static/js/main.28695534.js"
+  ]
+}
