@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Scoreboard from './Scoreboard/Scoreboard';
 import Gameboard from './Gameboard/Gameboard';
 import Cards from './Cards/Cards';
+import GamePrompt from './Prompts/GamePrompt';
+import Play from './Buttons/Play';
 import getCardData from './helpers/cardData';
 import shuffle from './helpers/shuffle';
 
@@ -12,6 +14,7 @@ const Main = () => {
   const [highScore, setHighScore] = useState(0);
   const [deckNum, setDeckNum] = useState(0);
   const [gameState, setGameState] = useState(0);
+  const [lastScore, setLastScore] = useState(0);
 
   // Render deck in random order on mount && score change
   useEffect(() => {
@@ -33,6 +36,13 @@ const Main = () => {
     }
   }, [currentScore]);
 
+  // Captures most recent score
+  useEffect(() => {
+    if (currentScore > 0) {
+      setLastScore(currentScore);
+    }
+  }, [currentScore, lastScore]);
+
   const handleCardClick = (cardId) => {
     const fullId = cardId + deckNum;
     const pickedBefore = pickedCards.some((card) => card === fullId);
@@ -43,25 +53,37 @@ const Main = () => {
       setPickedCards([]);
       setCurrentScore(0);
       setDeckNum(0);
+      setGameState(1);
     }
   };
+
+  const playGame = () => setGameState(0);
+
+  let gameComponent;
+  if (gameState === 1) {
+    gameComponent = (
+      <GamePrompt endScore={lastScore}>
+        <Play continueGame={playGame} />
+      </GamePrompt>
+    );
+  } else {
+    gameComponent = cards.map((card) => (
+      <Cards
+        key={card.id}
+        id={card.id}
+        name={card.name}
+        img={card.img}
+        handleClick={handleCardClick}
+      />
+    ));
+  }
 
   return (
     <main className="game">
       <div id="instructions">game instructions</div>
       <div id="deck-level">Deck #{deckNum + 1}</div>
       <Scoreboard currentScore={currentScore} highScore={highScore} />
-      <Gameboard>
-        {cards.map((card) => (
-          <Cards
-            key={card.id}
-            id={card.id}
-            name={card.name}
-            img={card.img}
-            handleClick={handleCardClick}
-          />
-        ))}
-      </Gameboard>
+      <Gameboard>{gameComponent}</Gameboard>
     </main>
   );
 };
