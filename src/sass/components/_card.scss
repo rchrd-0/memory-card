@@ -1,0 +1,85 @@
+@use "../abstracts/" as a;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: a.$backgroundSecondary;
+  border: 1px solid a.$primaryDark;
+  border-radius: a.$outerRadius;
+  cursor: pointer;
+  box-shadow: a.$lightShadow;
+  filter: brightness(0.95);
+  transition: filter 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    filter: brightness(1);
+    box-shadow: a.$heavyShadow;
+    transition: filter 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
+
+  .film-name {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: a.$primaryDark;
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    border-top-left-radius: a.$innerRadius;
+    border-top-right-radius: a.$innerRadius;
+  }
+
+  &[data-img="howls"] > img {
+    content: url("../../Assets/howls.jpg");
+  }
+
+  &[data-img="kaguya"] > img {
+    content: url("../../Assets/kaguya.jpg");
+  }
+
+  &[data-img="kiki"] > img {
+    content: url("../../Assets/kiki.jpg");
+  }
+
+  &[data-img="laputa"] > img {
+    content: url("../../Assets/laputa.jpg");
+  }
+
+  &[data-img="mononoke"] > img {
+    content: url("../../Assets/mononoke.jpg");
+  }
+
+  &[data-img="noface"] > img {
+    content: url("../../Assets/noface.jpg");
+  }
+
+  &[data-img="ponyo"] > img {
+    content: url("../../Assets/ponyo.jpg");
+  }
+
+  &[data-img="porco"] > img {
+    content: url("../../Assets/porco.jpg");
+  }
+
+  &[data-img="totoro"] > img {
+    content: url("../../Assets/totoro.jpg");
+  }
+
+  &[data-img="twr"] > img {
+    content: url("../../Assets/twr.jpg");
+  }
+
+  &[data-img="whisper"] > img {
+    content: url("../../Assets/whisper.jpg");
+  }
+
+  &[data-img="nausicaa"] > img {
+    content: url("../../Assets/nausicaa.jpg");
+  }
+}

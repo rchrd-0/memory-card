@@ -1,0 +1,15 @@
+@use "../abstracts/" as a;
+
+#scoreboard {
+  display: flex;
+  gap: 2ch;
+  font-weight: 500;
+
+  #curr-score {
+    color: a.$accentPrimary;
+  }
+
+  #high-score {
+    color: a.$accentSecondary;
+  }
+}

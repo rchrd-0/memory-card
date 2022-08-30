@@ -1,0 +1,17 @@
+@use "../abstracts/" as a;
+
+button {
+  margin-top: 10px;
+  align-self: center;
+  padding: 4px 12px;
+  background-color: a.$backgroundSecondary;
+  color: a.$primaryDark;
+  border-radius: a.$innerRadius;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:active {
+    filter: brightness(0.7);
+    transition: all 0.1s ease-in-out;
+  }
+}

@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as a;
+
+@mixin snackbar {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  color: a.$primaryLight;
+  background: a.$primaryDark;
+  box-shadow: a.$mediumShadow;
+  border-radius: a.$innerRadius;
+}

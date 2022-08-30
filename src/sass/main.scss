@@ -1,0 +1,21 @@
+@use "./abstracts/" as a;
+@use "./base" as base;
+@use "./components/" as components;
+
+:root {
+  --background: #e4f2ff;
+  --primary-dark: #001f36;
+  --primary-light: #c6e6ff;
+  --card: #d1e5f8;
+  --complementary: #ffdba6;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: a.$backgroundPrimary;
+  font-family: base.$fontStack;
+}
