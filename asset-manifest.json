@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/memory-card/static/css/main.814710ec.css",
-    "main.js": "/memory-card/static/js/main.28695534.js",
+    "main.css": "/memory-card/static/css/main.2b7d353f.css",
+    "main.js": "/memory-card/static/js/main.a237e995.js",
     "static/media/laputa.jpg": "/memory-card/static/media/laputa.427bc68da5cf934fdb54.jpg",
     "static/media/whisper.jpg": "/memory-card/static/media/whisper.e93fdf351d2c1534dd13.jpg",
     "static/media/mononoke.jpg": "/memory-card/static/media/mononoke.ba234ecd307111457d85.jpg",
@@ -16,11 +16,11 @@
     "static/media/kaguya.jpg": "/memory-card/static/media/kaguya.bd986858be016994c585.jpg",
     "index.html": "/memory-card/index.html",
     "static/media/github.svg": "/memory-card/static/media/github.c529138f2e7b41f18f28.svg",
-    "main.814710ec.css.map": "/memory-card/static/css/main.814710ec.css.map",
-    "main.28695534.js.map": "/memory-card/static/js/main.28695534.js.map"
+    "main.2b7d353f.css.map": "/memory-card/static/css/main.2b7d353f.css.map",
+    "main.a237e995.js.map": "/memory-card/static/js/main.a237e995.js.map"
   },
   "entrypoints": [
-    "static/css/main.814710ec.css",
-    "static/js/main.28695534.js"
+    "static/css/main.2b7d353f.css",
+    "static/js/main.a237e995.js"
   ]
 }
