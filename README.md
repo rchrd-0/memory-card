@@ -1,4 +1,4 @@
-# cv-app
+# memory-card
 ![Site preview](./site-preview.png)
 A JavaScript (React) project from The Odin Project's [curriculum](https://www.theodinproject.com/lessons/node-path-javascript-memory-card). Main focus:
 * React hooks and lifecycle methods; fundamentals (components, states, props, create-react-app)
